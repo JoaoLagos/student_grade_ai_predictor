@@ -1,7 +1,9 @@
 # 🧠 Predição de Classe de Notas de Estudantes - Projeto de Inteligência Artificial 🧠
 
 <p align="left">
-    <img src="https://img.shields.io/badge/Status-Finalizado-greendark?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen?style=for-the-badge"/>
+    <!-- <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange?style=for-the-badge"/> -->
+    <img src="https://img.shields.io/github/license/JoaoLagos/planner_de_tarefas?color=blue&style=for-the-badge"/>
 </p>
 
 Bem-vindo ao repositório do projeto de Predição de Classe de Notas de Estudantes. Este projeto visa criar um modelo de aprendizado de máquina capaz de prever a classificação dos estudantes com base em diversas características demográficas, hábitos de estudo, envolvimento parental, atividades extracurriculares e desempenho acadêmico.
