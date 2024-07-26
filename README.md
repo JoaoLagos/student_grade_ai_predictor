@@ -18,6 +18,8 @@ Bem-vindo ao repositório do projeto de Predição de Classe de Notas de Estudan
 
 O projeto de Predição de Classe de Notas de Estudantes tem como objetivo desenvolver um modelo de aprendizado de máquina capaz de prever a classe de nota de um estudante. O modelo treinado será capaz de analisar esses dados e prever se um estudante está mais propenso a ter uma determinada classe de nota com base em diversas características.
 
+Esses dados foram extraídos através do site Kaggle: https://www.kaggle.com/datasets/rabieelkharoua/students-performance-dataset
+
 ### 📊 Informações dos Dados
 
 | Coluna               | Descrição                                                                 |
