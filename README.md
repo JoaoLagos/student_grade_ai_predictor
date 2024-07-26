@@ -43,7 +43,7 @@ O projeto de Predição de Classe de Notas de Estudantes tem como objetivo desen
 | **`Sports`**             | Participação em esportes, onde 0 indica Não e 1 indica Sim.            |
 | **`Music`**              | Participação em atividades musicais, onde 0 indica Não e 1 indica Sim. |
 | **`Volunteering`**       | Participação em voluntariado, onde 0 indica Não e 1 indica Sim.        |
-| **`GPA`**                | Média de notas em uma escala de 2.0 a 4.0, influenciada por hábitos de estudo, envolvimento parental e atividades extracurriculares. |
+| **`GPA`**                | Média de notas em uma escala de 0.0 a 4.0, influenciada por hábitos de estudo, envolvimento parental e atividades extracurriculares. |
 | **`GradeClass`**         | Classificação das notas dos estudantes com base no GPA:                |
 |                          | 0: 'A' (GPA >= 3.5)                                                    |
 |                          | 1: 'B' (3.0 <= GPA < 3.5)                                              |

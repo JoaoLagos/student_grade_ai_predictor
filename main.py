@@ -1,5 +1,8 @@
 import joblib
 import pandas as pd
+import tkinter as tk
+from tkinter import ttk
+from tkinter import messagebox
 
 def predict_grade_class(model, new_data):
     """
@@ -15,27 +18,114 @@ def predict_grade_class(model, new_data):
     prediction = model.predict(new_data)
     return prediction
 
+def on_predict():
+    try:
+        # Obter valores dos campos de entrada
+        age = int(entry_age.get())
+        gender = gender_combobox.current()
+        ethnicity = ethnicity_combobox.current()
+        parental_education = parental_education_combobox.current()
+        study_time_weekly = float(entry_study_time_weekly.get())
+        absences = int(entry_absences.get())
+        tutoring = tutoring_combobox.current()
+        parental_support = parental_support_combobox.current()
+        extracurricular = extracurricular_combobox.current()
+        sports = sports_combobox.current()
+        music = music_combobox.current()
+        volunteering = volunteering_combobox.current()
+        
+        # Criar DataFrame com os dados do estudante
+        new_student_data = pd.DataFrame({
+            'Age': [age],
+            'Gender': [gender],
+            'Ethnicity': [ethnicity],
+            'ParentalEducation': [parental_education],
+            'StudyTimeWeekly': [study_time_weekly],
+            'Absences': [absences],
+            'Tutoring': [tutoring],
+            'ParentalSupport': [parental_support],
+            'Extracurricular': [extracurricular],
+            'Sports': [sports],
+            'Music': [music],
+            'Volunteering': [volunteering]
+        })
+        
+        # Fazer a previsão
+        grade_class_prediction = predict_grade_class(model, new_student_data)
+        print(grade_class_prediction)
+        grade_class_mapping = {0: "A", 1: "B", 2: "C", 3: "D", 4: "F"}
+        result = f'Predição da classe de nota desse aluno: {grade_class_mapping[grade_class_prediction[0]]}'
+        
+        # Mostrar resultado na interface gráfica
+        messagebox.showinfo("Resultado da Predição", result)
+    
+    except ValueError:
+        messagebox.showerror("Erro de Entrada", "Por favor, insira valores válidos.")
 
-# Exemplo de uso:
 # Carregar modelo
 model = joblib.load("model/students_model_random_forest.pkl")
-# Suponha que new_student_data seja um DataFrame com as mesmas colunas que X (sem 'GradeClass')
-new_student_data = pd.DataFrame({
-    'Age': [15],
-    'Gender': [0],
-    'Ethnicity': [2],
-    'ParentalEducation': [3],
-    'StudyTimeWeekly': [4.2],
-    'Absences': [26],
-    'Tutoring': [0],
-    'ParentalSupport': [2],
-    'Extracurricular': [0],
-    'Sports': [0],
-    'Music': [0],
-    'Volunteering': [0],
-    'GPA': [0.11]
-})
 
-# Previsão
-grade_class_prediction = predict_grade_class(model, new_student_data)
-print(f'Predição da classe de nota: {grade_class_prediction[0]}')
+# Configurar interface gráfica
+root = tk.Tk()
+root.title("Previsão de Classe de Notas de Estudantes")
+
+# Adicionar um título principal
+title = ttk.Label(root, text="Previsão de Classe de Notas de Estudantes", font=("Helvetica", 16, "bold"))
+title.grid(row=0, columnspan=2, pady=10, padx=20)
+
+# Criar um frame para organizar os widgets
+frame = ttk.Frame(root, padding="10")
+frame.grid(row=1, column=0, columnspan=2)
+
+labels = [
+    "Idade",
+    "Gênero",
+    "Etnia",
+    "Educação dos Pais",
+    "Tempo de Estudo Semanal (horas)",
+    "Faltas",
+    "Tutoria",
+    "Apoio Parental",
+    "Atividades Extracurriculares",
+    "Esportes",
+    "Música",
+    "Voluntariado",
+]
+
+options = {
+    "Gênero": ["Masculino", "Feminino"],
+    "Etnia": ["Caucasiano", "Afro-americano", "Asiático", "Outro"],
+    "Educação dos Pais": ["Nenhum", "Ensino Médio", "Alguma Faculdade", "Bacharelado", "Superior"],
+    "Tutoria": ["Não", "Sim"],
+    "Apoio Parental": ["Nenhum", "Baixo", "Moderado", "Alto", "Muito Alto"],
+    "Atividades Extracurriculares": ["Não", "Sim"],
+    "Esportes": ["Não", "Sim"],
+    "Música": ["Não", "Sim"],
+    "Voluntariado": ["Não", "Sim"]
+}
+
+entries = []
+combobox_vars = {}
+
+for i, label in enumerate(labels):
+    ttk.Label(frame, text=label).grid(row=i, column=0, pady=5, sticky='E')
+    if label in options: # Se for do MENU SELECIONÁVEL
+        combobox = ttk.Combobox(frame, values=options[label], state="readonly")
+        combobox.grid(row=i, column=1, pady=5)
+        entries.append(combobox)
+        combobox_vars[label] = combobox
+    else:
+        entry = ttk.Entry(frame, width=30)
+        entry.grid(row=i, column=1, pady=5)
+        entries.append(entry)
+
+# Associar entradas às variáveis
+entry_age, gender_combobox, ethnicity_combobox, parental_education_combobox, entry_study_time_weekly, \
+entry_absences, tutoring_combobox, parental_support_combobox, extracurricular_combobox, sports_combobox, \
+music_combobox, volunteering_combobox = entries
+
+# Botão para prever
+predict_button = ttk.Button(root, text='Prever', command=on_predict)
+predict_button.grid(row=2, column=0, columnspan=2, pady=10)
+
+root.mainloop()
