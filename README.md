@@ -1,10 +1,14 @@
 # 🧠 Predição de Classe de Notas de Estudantes - Projeto de Inteligência Artificial 🧠
 
 <p align="left">
-    <img src="https://img.shields.io/badge/Status-Em%20Andamento...-orange?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/Status-Finalizado-greendark?style=for-the-badge"/>
 </p>
 
 Bem-vindo ao repositório do projeto de Predição de Classe de Notas de Estudantes. Este projeto visa criar um modelo de aprendizado de máquina capaz de prever a classificação dos estudantes com base em diversas características demográficas, hábitos de estudo, envolvimento parental, atividades extracurriculares e desempenho acadêmico.
+
+<p align="center">
+  <img src="./images/aplication_photo.png" alt="aplication photo">
+</p>
 
 <hr>
 
@@ -12,9 +16,7 @@ Bem-vindo ao repositório do projeto de Predição de Classe de Notas de Estudan
 
 O projeto de Predição de Classe de Notas de Estudantes tem como objetivo desenvolver um modelo de aprendizado de máquina capaz de prever a classe de nota de um estudante. O modelo treinado será capaz de analisar esses dados e prever se um estudante está mais propenso a ter uma determinada classe de nota com base em diversas características.
 
-### Informações dos Dados
-
-### Informações dos Dados
+### 📊 Informações dos Dados
 
 | Coluna               | Descrição                                                                 |
 |----------------------|---------------------------------------------------------------------------|
@@ -45,21 +47,33 @@ O projeto de Predição de Classe de Notas de Estudantes tem como objetivo desen
 
 ## ⚙️ Tecnologias Utilizadas
 
-O projeto está sendo desenvolvido utilizando as seguintes tecnologias:
+O projeto está sendo desenvolvido utilizando as seguintes tecnologias e ferramentas:
 
 - **Linguagem de Programação [Python](https://www.python.org/):** Linguagem de programação de alto nível amplamente utilizada em ciência de dados e aprendizado de máquina.
-- **Bibliotecas de Manipulação e Análise de Dados:** Utilizaremos a biblioteca [pandas](https://pandas.pydata.org/) para manipulação e análise de dados, bem como o seu tratamento. O pandas é uma ferramenta poderosa para trabalhar com dados tabulares, oferecendo estruturas de dados flexíveis e eficientes, como o DataFrame.
-- **Bibliotecas de Machine Learning:** Utilizaremos as bibliotecas [scikit-learn](https://scikit-learn.org/stable/) para construir e avaliar os modelos de aprendizado de máquina. O scikit-learn é uma biblioteca para análise de dados e modelagem preditiva.
-- **Bibliotecas de Balanceamento de Dados:** Utilizaremos a biblioteca [imbalanced-learn](https://imbalanced-learn.org/) para balancear os dados, como o SMOTEENN.
-- **Ferramentas de Visualização de Dados:** Utilizaremos bibliotecas como [Matplotlib](https://matplotlib.org/) e [Seaborn](https://seaborn.pydata.org/) para visualizar os dados e os resultados do modelo.
+
+- **Bibliotecas de Manipulação e Análise de Dados:** Utilizamos a biblioteca [pandas](https://pandas.pydata.org/) para manipulação e análise de dados. O pandas é uma ferramenta poderosa para trabalhar com dados tabulares, oferecendo estruturas de dados flexíveis e eficientes, como o DataFrame.
+
+- **Bibliotecas de Machine Learning:** Utilizamos as bibliotecas [scikit-learn](https://scikit-learn.org/stable/) para construir e avaliar os modelos de aprendizado de máquina. O scikit-learn é uma biblioteca essencial para análise de dados e modelagem preditiva, incluindo:
+  - **[Logistic Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html):** Modelo de regressão logística para classificação.
+  - **[Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html):** Modelo de floresta aleatória para classificação.
+
+- **Bibliotecas de Balanceamento de Dados:** Utilizamos a biblioteca [imbalanced-learn](https://imbalanced-learn.org/) para balancear os dados e tratar problemas de desequilíbrio, incluindo:
+  - **[SMOTEENN](https://imbalanced-learn.org/stable/references/generated/imblearn.combine.SMOTEENN.html):** Combina SMOTE e Edited Nearest Neighbours para balanceamento de dados.
+  - **[Random Under Sampling](https://imbalanced-learn.org/stable/references/generated/imblearn.under_sampling.RandomUnderSampler.html):** Reduz o número de exemplos da classe majoritária para balancear os dados.
+  - **[Edited Nearest Neighbours](https://imbalanced-learn.org/stable/references/generated/imblearn.under_sampling.EditedNearestNeighbours.html):** Corrige exemplos mal classificados pelo modelo.
+
+- **Ferramentas de Visualização de Dados:** Utilizamos bibliotecas como [Matplotlib](https://matplotlib.org/) e [Seaborn](https://seaborn.pydata.org/) para criar visualizações dos dados e resultados dos modelos:
+  - **[Matplotlib](https://matplotlib.org/):** Biblioteca de visualização para criar gráficos estáticos, animados e interativos em Python.
+  - **[Seaborn](https://seaborn.pydata.org/):** Interface de alto nível baseada no Matplotlib para criar gráficos estatísticos atraentes e informativos.
+
+- **Ferramenta de Persistência de Modelos:** Utilizamos [joblib](https://joblib.readthedocs.io/en/latest/) para persistir e carregar modelos treinados, facilitando a reutilização e implementação de modelos em produção.
+
 
 ## 📂 Estrutura do Repositório
 
 - **`databases/`:** Pasta contendo os conjuntos de dados (databases/datasets) utilizados no projeto.
-- **`docs/`:** Pasta contendo os documentos do projeto para consulta.
-- **`models/`:** Pasta contendo os modelos treinados.
+- **`model/`:** Pasta contendo os modelos treinados.
 - **`notebooks/`:** Pasta contendo os notebooks Jupyter com os experimentos e análises realizadas.
-- **`scripts/`:** Pasta contendo scripts Python para pré-processamento, treinamento e previsão.
 - **`README.md`:** Documentação do projeto com informações sobre os objetivos, funcionalidades, tecnologias utilizadas, entre outros.
 
 ## 📝 Exemplo de Uso
