@@ -14,43 +14,27 @@ O projeto de Predição de Classe de Notas de Estudantes tem como objetivo desen
 
 ### Informações dos Dados
 
+### Informações dos Dados
+
 | Coluna               | Descrição                                                                 |
 |----------------------|---------------------------------------------------------------------------|
-| **`StudentID`**          | Identificação única de cada estudante.                                   |
-| **`Age`**                | Idade dos estudantes, variando de 15 a 18 anos.                         |
-| **`Gender`**             | Gênero dos estudantes, onde 0 representa Masculino e 1 representa Feminino. |
-| **`Ethnicity`**          | Etnia dos estudantes, codificada da seguinte forma:                    |
-|                          | 0: Caucasiano                                                          |
-|                          | 1: Afro-americano                                                      |
-|                          | 2: Asiático                                                            |
-|                          | 3: Outro                                                               |
-| **`ParentalEducation`**  | Nível de educação dos pais, codificado da seguinte forma:              |
-|                          | 0: Nenhum                                                              |
-|                          | 1: Ensino Médio                                                        |
-|                          | 2: Alguma Faculdade                                                    |
-|                          | 3: Bacharelado                                                         |
-|                          | 4: Superior                                                            |
+| **`StudentID`**      | Identificação única de cada estudante.                                   |
+| **`Age`**            | Idade dos estudantes, variando de 15 a 18 anos.                         |
+| **`Gender`**         | Gênero dos estudantes, onde 0 representa Masculino e 1 representa Feminino. |
+| **`Ethnicity`**      | Etnia dos estudantes, codificada da seguinte forma:<br>**0:** Caucasiano<br>**1:** Afro-americano<br>**2:** Asiático<br>**3:** Outro |
+| **`ParentalEducation`**  | Nível de educação dos pais, codificado da seguinte forma:<br>**0:** Nenhum<br>**1:** Ensino Médio<br>**2:** Alguma Faculdade<br>3: Bacharelado<br>4: Superior |
 | **`StudyTimeWeekly`**    | Tempo semanal de estudo em horas, variando de 0 a 20.                  |
 | **`Absences`**           | Número de faltas durante o ano letivo, variando de 0 a 30.             |
 | **`Tutoring`**           | Status de tutoria, onde 0 indica Não e 1 indica Sim.                   |
-| **`ParentalSupport`**    | Nível de apoio parental, codificado da seguinte forma:                 |
-|                          | 0: Nenhum                                                              |
-|                          | 1: Baixo                                                               |
-|                          | 2: Moderado                                                            |
-|                          | 3: Alto                                                                |
-|                          | 4: Muito Alto                                                          |
+| **`ParentalSupport`**    | Nível de apoio parental, codificado da seguinte forma:<br>**0:** Nenhum<br>**1:** Baixo<br>**2:** Moderado<br>**3:** Alto<br>**4:** Muito Alto |
 | **`Extracurricular`**    | Participação em atividades extracurriculares, onde 0 indica Não e 1 indica Sim. |
 | **`Sports`**             | Participação em esportes, onde 0 indica Não e 1 indica Sim.            |
 | **`Music`**              | Participação em atividades musicais, onde 0 indica Não e 1 indica Sim. |
 | **`Volunteering`**       | Participação em voluntariado, onde 0 indica Não e 1 indica Sim.        |
 | **`GPA`**                | Média de notas em uma escala de 0.0 a 4.0, influenciada por hábitos de estudo, envolvimento parental e atividades extracurriculares. |
-| **`GradeClass`**         | Classificação das notas dos estudantes com base no GPA:                |
-|                          | 0: 'A' (GPA >= 3.5)                                                    |
-|                          | 1: 'B' (3.0 <= GPA < 3.5)                                              |
-|                          | 2: 'C' (2.5 <= GPA < 3.0)                                              |
-|                          | 3: 'D' (2.0 <= GPA < 2.5)                                              |
-|                          | 4: 'F' (GPA < 2.0)                                                     |
-|
+| **`GradeClass`**         | Classificação das notas dos estudantes com base no GPA:<br>**0:** 'A' (GPA >= 3.5)<br>**1:** 'B' (3.0 <= GPA < 3.5)<br>**2:** 'C' (2.5 <= GPA < 3.0)<br>**3:** 'D' (2.0 <= GPA < 2.5)<br>**4:** 'F' (GPA < 2.0) |
+
+
 ### 🛠️ Funcionalidades Principais
 
 - **Pré-processamento dos Dados:** Realizar limpeza e o pré-processamento dos dados a fim de remover dados errados, discrepantes, faltosos e entre outros.
