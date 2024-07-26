@@ -69,13 +69,20 @@ model = joblib.load("model/students_model_random_forest.pkl")
 root = tk.Tk()
 root.title("Previsão de Classe de Notas de Estudantes")
 
+# Configurar o grid para centralizar o conteúdo
+root.grid_rowconfigure(0, weight=1)
+root.grid_rowconfigure(1, weight=1)
+root.grid_rowconfigure(2, weight=1)
+root.grid_columnconfigure(0, weight=1)
+root.grid_columnconfigure(1, weight=1)
+
 # Adicionar um título principal
 title = ttk.Label(root, text="Previsão de Classe de Notas de Estudantes", font=("Helvetica", 16, "bold"))
-title.grid(row=0, columnspan=2, pady=10, padx=20)
+title.grid(row=0, column=0, columnspan=2, pady=10, padx=20, sticky='n')
 
 # Criar um frame para organizar os widgets
 frame = ttk.Frame(root, padding="10")
-frame.grid(row=1, column=0, columnspan=2)
+frame.grid(row=1, column=0, columnspan=2, sticky='nsew')
 
 labels = [
     "Idade",
@@ -108,15 +115,15 @@ entries = []
 combobox_vars = {}
 
 for i, label in enumerate(labels):
-    ttk.Label(frame, text=label).grid(row=i, column=0, pady=5, sticky='E')
+    ttk.Label(frame, text=f"{label}:").grid(row=i, column=0, padx=(0, 10), pady=5, sticky='E')
     if label in options: # Se for do MENU SELECIONÁVEL
-        combobox = ttk.Combobox(frame, values=options[label], state="readonly")
-        combobox.grid(row=i, column=1, pady=5)
+        combobox = ttk.Combobox(frame, values=options[label], state="readonly", width=30)
+        combobox.grid(row=i, column=1, pady=5, sticky='ew')
         entries.append(combobox)
         combobox_vars[label] = combobox
     else:
         entry = ttk.Entry(frame, width=30)
-        entry.grid(row=i, column=1, pady=5)
+        entry.grid(row=i, column=1, pady=5, sticky='ew')
         entries.append(entry)
 
 # Associar entradas às variáveis
