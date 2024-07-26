@@ -26,7 +26,7 @@ O projeto de Predição de Classe de Notas de Estudantes tem como objetivo desen
 | **`Age`**            | Idade dos estudantes, variando de 15 a 18 anos.                         |
 | **`Gender`**         | Gênero dos estudantes, onde 0 representa Masculino e 1 representa Feminino. |
 | **`Ethnicity`**      | Etnia dos estudantes, codificada da seguinte forma:<br>**0:** Caucasiano<br>**1:** Afro-americano<br>**2:** Asiático<br>**3:** Outro |
-| **`ParentalEducation`**  | Nível de educação dos pais, codificado da seguinte forma:<br>**0:** Nenhum<br>**1:** Ensino Médio<br>**2:** Alguma Faculdade<br>3: Bacharelado<br>4: Superior |
+| **`ParentalEducation`**  | Nível de educação dos pais, codificado da seguinte forma:<br>**0:** Nenhum<br>**1:** Ensino Médio<br>**2:** Alguma Faculdade<br>**3:** Bacharelado<br>**4:** Superior |
 | **`StudyTimeWeekly`**    | Tempo semanal de estudo em horas, variando de 0 a 20.                  |
 | **`Absences`**           | Número de faltas durante o ano letivo, variando de 0 a 30.             |
 | **`Tutoring`**           | Status de tutoria, onde 0 indica Não e 1 indica Sim.                   |
